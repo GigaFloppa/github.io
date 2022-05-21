@@ -1,0 +1,32 @@
+<p>Структурная матрица системы</p>
+<textarea rows="10" cols="20" id = "matrix">
+0 1 0 0 0 0 
+1 0 1 1 1 1 
+0 0 0 1 0 0
+1 1 1 0 1 1 
+0 0 0 0 0 1
+1 1 1 1 1 0
+</textarea>
+<p></p>
+<p>Весовые коэфициенты</p>
+<textarea rows = "1" id = "weights">1 20 1 20 1 15</textarea>
+<p></p>
+<p>Число итераций</p>
+<input id = 'num_iterations' value = 128>
+<input type = 'button' id = 'run' value = 'Старт'>
+<p>Результат:</p>
+<pre id = 'result'></pre>
+<div id = "log"></div>
+<script src = 'script.js'></script>
+<style>
+    body {
+  font-family: system-ui;
+  background: white;
+  color: black;
+   
+}
+
+p{
+  margin : 2px
+}
+<\style>
