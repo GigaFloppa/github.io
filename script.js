@@ -17,7 +17,23 @@ const intersect = (first,second,...rest) =>{
   
   const isEntries = (a,b) => a.reduce((acc, el) => acc && b.indexOf(el) != -1, true)
   
-  
+  let logState = 0
+  const logButton = document.getElementById('log_button')
+  const log =document.getElementById('log')
+  log.hidden = 'hidden'
+  logButton.addEventListener('click',function(e){
+
+      if(logState == 0){
+          logState = 1
+          log.hidden = ''
+          logButton.textContent = 'Скрыть отчет'
+      }
+      else{
+        logState = 0
+        logButton.textContent = 'Показать отчет'
+        log.hidden = 'hidden'
+      }
+  })
   
   
   function Count(max){
@@ -81,8 +97,7 @@ const intersect = (first,second,...rest) =>{
     const result = run(matrix, weights,count)
     let res =  document.getElementById('result')
     try {
-      res.textContent =  ' Перестановка - ' + `[${result.replace}]; \n` + showReplace(result.replace) + '\n' + 'Нуль-структура : (' + [result.l, result.n, 'r'] + ') r = ' + result.r + 
-    '\nОбьем нуль-структуры : ' + result.vol + '\nЭффективность : ' + result.vol + '/' + result.wsum + '\nПолученная матрица :  \n \n'
+      res.textContent =  ' Замена переменных: ' + ` \n` + showReplace(result.replace)  + '\nПолученная матрица :  \n \n'
     for(let i = 0; i < result.matrix2.length; i++){
         for(let j = 0; j < result.matrix2.length; j++){
             res.textContent += result.matrix2[i][j] + ' '

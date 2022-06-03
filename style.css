@@ -1,0 +1,22 @@
+body {
+    font-family: system-ui;
+    background: white;
+    color: black;
+     
+  }
+  
+  p{
+    margin : 2px
+  }
+  
+
+.bcontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+  #matrix{
+    
+    min-height : 200px;
+    min-width : 200px
+  }
